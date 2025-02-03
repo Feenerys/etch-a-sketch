@@ -7,7 +7,7 @@ function generateGrid(gridSize) {
         const div = document.createElement("div");
         div.setAttribute("class","square");
         div.style.flexBasis = `${100/gridSize}%`;
-        div.addEventListener("mouseover",() => div.style.backgroundColor = "black");
+        div.addEventListener("mouseover",() => div.style.backgroundColor = randomColor());
         container.appendChild(div);
     }
 }
@@ -16,6 +16,13 @@ function removeGrid() {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
+}
+
+function randomColor() {
+    function rgb() {
+        return Math.floor(Math.random()*255);
+    } 
+    return `rgb(${rgb()},${rgb()},${rgb()})`
 }
 
 generateGrid(defaultGridSize);
