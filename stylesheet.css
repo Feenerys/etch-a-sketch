@@ -8,6 +8,6 @@
 
 .square {
     background-color: white;
-    flex: 1 1 6.25%; /* 100/16 boxes = 6.25% */
+    flex: 1 1;
     aspect-ratio: 1/1;
 }
