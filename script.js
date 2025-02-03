@@ -11,3 +11,8 @@ for (let i = 0; i < (gridSize); i++) {
     }
 }
 
+function removeGrid() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
