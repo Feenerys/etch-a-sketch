@@ -7,7 +7,12 @@ function generateGrid(gridSize) {
         const div = document.createElement("div");
         div.setAttribute("class","square");
         div.style.flexBasis = `${100/gridSize}%`;
-        div.addEventListener("mouseover",() => div.style.backgroundColor = randomColor());
+        div.addEventListener("mouseover",() => {
+            div.style.backgroundColor = randomColor();
+            let currentOpacity = +div.style.getPropertyValue('opacity');
+            div.style.opacity = currentOpacity < 1 ? currentOpacity + 0.1 : currentOpacity;
+            console.log(div.style.getPropertyValue('opacity'));
+        });
         container.appendChild(div);
     }
 }
