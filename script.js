@@ -1,6 +1,8 @@
 const container = document.querySelector(".container");
 
-for (let i = 0; i < (16*16); i++) {
+let gridSize = 16*16;
+
+for (let i = 0; i < (gridSize); i++) {
     const div = document.createElement("div");
     div.setAttribute("class","square");
     div.addEventListener("mouseover",() => div.style.backgroundColor = "black");
